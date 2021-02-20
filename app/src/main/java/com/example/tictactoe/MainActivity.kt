@@ -24,14 +24,19 @@ var oList = ArrayList<Int>()
 
 class MainActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
-        outState.putBoolean("gameBool", isInGame)
-        outState.putIntegerArrayList("xList", xList)
-        outState.putIntegerArrayList("oList", oList)
-        outState.putBoolean("is3x3", is3x3)
-        outState.putBoolean("isX", currentUser.isX)
-        outState.putBoolean("isGameOver", checkIfWonOrTie())
-        outState.putString("nameX", playerX.name)
-        outState.putString("nameO", playerO.name)
+
+        if(isInGame)
+        {
+            outState.putBoolean("gameBool", isInGame)
+            outState.putIntegerArrayList("xList", xList)
+            outState.putIntegerArrayList("oList", oList)
+            outState.putBoolean("is3x3", is3x3)
+            outState.putBoolean("isX", currentUser.isX)
+
+            outState.putString("nameX", playerX.name)
+            outState.putString("nameO", playerO.name)
+            outState.putBoolean("isGameOver", checkIfWonOrTie())
+        }
         super.onSaveInstanceState(outState)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,13 +48,14 @@ class MainActivity : AppCompatActivity() {
             val gameBool = savedInstanceState.getBoolean("gameBool")
             val boolIs3x3 = savedInstanceState.getBoolean("is3x3")
             val boolIsX = savedInstanceState.getBoolean("isX")
-            val isGameOver = savedInstanceState.getBoolean("isGameOver")
             val listX = savedInstanceState.getIntegerArrayList("xList")
             val listO = savedInstanceState.getIntegerArrayList("oList")
             val xName = savedInstanceState.getString("nameX")
             val oName = savedInstanceState.getString("nameO")
             if(gameBool)
             {
+                val isGameOver = savedInstanceState.getBoolean("isGameOver")
+
                 is3x3 = boolIs3x3
 
                 if(boolIs3x3)
