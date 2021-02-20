@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TicTacToe</string>
+    <string name="welcome">Welcome to TicTacToe!</string>
+    <string name="choice">Choose gameboard size:</string>
+    <string name="three">3x3</string>
+    <string name="four">4x4</string>
+    <string name="start">Start Game!</string>
+    <string name="rules">Rules:</string>
+    <string name="x">Player X:</string>
+    <string name="o">Player O:</string>
+    <string name="playerInfo">Player info:</string>
+    <string name="reset">Reset</string>
+    <string name="hintPlayers">Input player name</string>
+    <string name="whoStarts">Choose who starts:</string>
+    <string name="xShort">X</string>
+    <string name="oShort">O</string>
+
+</resources>

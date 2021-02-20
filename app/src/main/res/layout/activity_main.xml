@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/background_border">
+
+    <RelativeLayout
+        android:id="@+id/rlFirst"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome"
+            android:textSize="25sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"/>
+
+        <TextView
+            android:id="@+id/tvChoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choice"
+            android:textSize="19sp"
+            android:layout_below="@+id/tvWelcome"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgChoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tvChoice"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbFirst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/three"
+                android:textSize="18dp"
+                android:buttonTint="@color/blue"
+                android:onClick="onClickBoardSize"/>
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rbSecond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/four"
+                android:textSize="18dp"
+                android:buttonTint="@color/blue"
+                android:onClick="onClickBoardSize"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvRules"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rules"
+            android:textSize="20sp"
+            android:layout_below="@+id/rgChoice"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/tvRulesText"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:textSize="17sp"
+            android:textColor="@color/dark_grey"
+            android:gravity="center"
+            android:layout_below="@+id/tvRules"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/buttons"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/tvPlayerInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/playerInfo"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/tvRulesText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"/>
+
+        <LinearLayout
+            android:id="@+id/llplayerX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPlayerInfo"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/x"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/playerXName"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintPlayers"
+                android:gravity="center"
+                android:inputType="textImeMultiLine"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llplayerO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llplayerX"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/o"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/playerOName"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintPlayers"
+                android:gravity="center"
+                android:inputType="textImeMultiLine"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvWhoStarts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llplayerO"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:text="@string/whoStarts"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/rgWhoStarts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tvWhoStarts"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/xShort"
+                android:textSize="18sp"
+                android:buttonTint="@color/blue"
+                android:onClick="onClickBoardSize"/>
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rbO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/oShort"
+                android:textSize="18sp"
+                android:buttonTint="@color/blue"
+                android:onClick="onClickBoardSize"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="@string/start"
+            android:textSize="20sp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:onClick="onClickPlay"
+            android:backgroundTint="@color/blue"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlGame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <GridLayout
+            android:id="@+id/glBoard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp">
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/tvTurns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/glBoard"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:id="@+id/tvWin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTurns"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="@string/reset"
+            android:textSize="20sp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:onClick="onClickReset"
+            android:backgroundTint="@color/blue"/>
+
+    </RelativeLayout>
+</RelativeLayout>
+
